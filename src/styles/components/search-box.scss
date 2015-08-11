@@ -1,0 +1,26 @@
+.search-box {
+    width: 400px;
+    margin: 100px auto 0;
+
+    input {
+        width: 50%;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+
+        &:focus {
+            outline-width: 0;
+        }
+    }
+
+    button {
+        background: #fff;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+
+        &:focus {
+            outline-width: 0;
+        }
+    }
+}
