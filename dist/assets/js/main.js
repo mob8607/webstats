@@ -1,52 +1,1 @@
-$(document).ready(function() {
-    var $container = null;
-
-    $('#search-form').on('submit', function(event) {
-        event.preventDefault();
-
-        var url = $('#search-url').val();
-
-        $.ajax({
-            url: '/loader.php?url=' + url
-        }).done(function(response) {
-            $container = $(response);
-            processWebsite(url);
-        });
-    });
-
-    function processWebsite(url) {
-        var $line = $('<tr></tr>')
-
-        $('#result-url').html(url);
-
-        $line.append('<td>' + url + '</td>');
-        $line.append(addCounterTableCell($container, 'a'));
-        $line.append(addCounterTableCell($container, 'div'));
-        $line.append(addCounterTableCell($container, 'p'));
-        $line.append(addCounterTableCell($container, 'span'));
-        $line.append(addCounterTableCell($container, 'article'));
-        $line.append(addCounterTableCell($container, 'section'));
-        $line.append(addCounterTableCell($container, 'header'));
-        $line.append(addCounterTableCell($container, 'footer'));
-        $line.append(addCounterTableCell($container, 'aside'));
-        $line.append(addCounterTableCell($container, 'nav'));
-        $line.append(addCounterTableCell($container, 'h1'));
-        $line.append(addCounterTableCell($container, 'h2'));
-        $line.append(addCounterTableCell($container, 'h3'));
-        $line.append(addCounterTableCell($container, 'h4'));
-        $line.append(addCounterTableCell($container, 'h5'));
-        $line.append(addCounterTableCell($container, 'h6'));
-        $line.append(addCounterTableCell($container, 'img'));
-        $line.append(addCounterTableCell($container, 'b'));
-        $line.append(addCounterTableCell($container, 'i'));
-
-        $('#result-table').append($line);
-    }
-
-    function addCounterTableCell($container, name) {
-        $td = $('<td></td>');
-
-        $td.html($container.find(name).length);
-        return $td;
-    }
-});
+$(document).ready(function() {    var $container = null;    $('#search-form').on('submit', function(event) {        event.preventDefault();        var url = $('#search-url').val();        if (checkForUrl(url)) {            $.ajax({                url: '/loader.php?url=' + url            }).done(function(response) {                $container = $(response);                processWebsite(url);            });        }    });    function processWebsite(url) {        var $line = $('<tr class="hi"></tr>')        $('#result-url').html(url);        $line.append('<td>' + url + '</td>');        $line.append(addCounterTableCell($container, 'a'));        $line.append(addCounterTableCell($container, 'div'));        $line.append(addCounterTableCell($container, 'p'));        $line.append(addCounterTableCell($container, 'span'));        $line.append(addCounterTableCell($container, 'article'));        $line.append(addCounterTableCell($container, 'section'));        $line.append(addCounterTableCell($container, 'header'));        $line.append(addCounterTableCell($container, 'footer'));        $line.append(addCounterTableCell($container, 'aside'));        $line.append(addCounterTableCell($container, 'nav'));        $line.append(addCounterTableCell($container, 'h1'));        $line.append(addCounterTableCell($container, 'h2'));        $line.append(addCounterTableCell($container, 'h3'));        $line.append(addCounterTableCell($container, 'h4'));        $line.append(addCounterTableCell($container, 'h5'));        $line.append(addCounterTableCell($container, 'h6'));        $line.append(addCounterTableCell($container, 'img'));        $line.append(addCounterTableCell($container, 'b'));        $line.append(addCounterTableCell($container, 'i'));        $line.append($('<td><span class="result-remove-icon js-remove-item">X</span></td>'));        $('#result-table').append($line);        bindDomEVents();    }    function checkForUrl(url) {        var isUrl = false;        if (url && url.indexOf('.') !== -1) {            isUrl = true;        }        return isUrl;    }    function addCounterTableCell($container, name) {        var $td = $('<td></td>');        $td.html($container.find(name).length);        return $td;    }    function unbindDomEvents() {        $('.js-remove-item').off('click');    }    function bindDomEVents() {        unbindDomEvents();        $('.js-remove-item').on('click', function(event) {            $(event.currentTarget).parents('tr').remove();        });    }});

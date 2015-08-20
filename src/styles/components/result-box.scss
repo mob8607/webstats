@@ -3,7 +3,7 @@
     $breakpoint-alpha: 480px; // adjust to your needs
 
     .rwd-table {
-        margin: 20px auto;
+        width: 100%;
         min-width: 300px; // adjust to your needs
 
         tr {
@@ -54,10 +54,7 @@
             }
 
         }
-
-
     }
-
 
     body {
         padding: 0 2em;
@@ -67,16 +64,16 @@
 
     h1 {
         letter-spacing: -1px;
-        color: #34495E;
+        color: $fontColor;
     }
 
     .rwd-table {
-        background: #34495E;
-        color: #fff;
-        border-radius: .4em;
+        background: $color1;
+        color: $fontColor2;
+        //border-radius: .4em;
         overflow: hidden;
         tr {
-            border-color: lighten(#34495E, 10%);
+            border: none;
         }
         th, td {
             margin: .5em 1em;
@@ -85,7 +82,19 @@
             }
         }
         th, td:before {
-            color: #dd5;
+            color: $fontColor;
+        }
+
+        thead {
+            border-bottom: 1px solid #fff;
+        }
+    }
+
+    .result-remove-icon {
+        cursor: pointer;
+
+        &:hover {
+            color: lighten($fontColor2, 10%);
         }
     }
 }

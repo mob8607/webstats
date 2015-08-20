@@ -494,15 +494,21 @@ table {
   border-spacing: 0;
 }
 
+.search-field-container {
+  width: 100%;
+  background-color: #C7860F;
+}
+
 .search-box {
-  width: 308px;
-  margin: 100px auto 0;
+  width: 500px;
+  margin: 50px auto 50px;
 }
 .search-box input {
-  width: 220px;
+  width: 392px;
   font-size: 18px;
-  padding: 10px;
+  padding: 0 20px;
   border: none;
+  height: 50px;
 }
 .search-box input:focus {
   outline-width: 0;
@@ -510,15 +516,15 @@ table {
 .search-box button {
   background: #fff;
   font-size: 18px;
-  padding: 10px;
   border: none;
+  height: 50px;
 }
 .search-box button:focus {
   outline-width: 0;
 }
 
 .result-box .rwd-table {
-  margin: 20px auto;
+  width: 100%;
   min-width: 300px;
 }
 .result-box .rwd-table tr {
@@ -568,16 +574,15 @@ table {
 }
 .result-box h1 {
   letter-spacing: -1px;
-  color: #34495E;
+  color: #e5d0a7;
 }
 .result-box .rwd-table {
-  background: #34495E;
-  color: #fff;
-  border-radius: .4em;
+  background: #C7860F;
+  color: #e5c28b;
   overflow: hidden;
 }
 .result-box .rwd-table tr {
-  border-color: #46637f;
+  border: none;
 }
 .result-box .rwd-table th, .result-box .rwd-table td {
   margin: .5em 1em;
@@ -588,7 +593,16 @@ table {
   }
 }
 .result-box .rwd-table th, .result-box .rwd-table td:before {
-  color: #dd5;
+  color: #e5d0a7;
+}
+.result-box .rwd-table thead {
+  border-bottom: 1px solid #fff;
+}
+.result-box .result-remove-icon {
+  cursor: pointer;
+}
+.result-box .result-remove-icon:hover {
+  color: #eed8b5;
 }
 
 body {
