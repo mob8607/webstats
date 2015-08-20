@@ -26,7 +26,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src('src/scripts/**/*.js')
+    return gulp.src('src/scripts/*.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
         .pipe(concat('main.js'))
@@ -58,7 +58,7 @@ gulp.task('watch', function() {
     gulp.watch('src/styles/**/*.scss', ['styles']);
 
     // Watch .js files
-    gulp.watch('src/scripts/**/*.js', ['scripts']);
+    gulp.watch('src/scripts/*.js', ['scripts']);
 
     // Watch image files
     gulp.watch('src/images/**/*', ['images']);
