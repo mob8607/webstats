@@ -70,8 +70,7 @@
     .rwd-table {
         background: $color1;
         color: $fontColor2;
-        //border-radius: .4em;
-        overflow: hidden;
+        overflow: visible;
         tr {
             border: none;
         }
@@ -79,6 +78,14 @@
             margin: .5em 1em;
             @media (min-width: $breakpoint-alpha) {
                 padding: 1em !important;
+            }
+
+            &.is-success {
+                color: $fontColorSuccess;
+            }
+
+            &.is-error {
+                color: $fontColorError;
             }
         }
         th, td:before {
@@ -97,4 +104,20 @@
             color: lighten($fontColor2, 10%);
         }
     }
+}
+
+.result-box-url {
+    position: relative;
+}
+
+.result-box-url-overlay {
+    position: absolute;
+    background-color: $color2;
+    height: 20px;
+    white-space: nowrap;
+    color: $fontColor;
+    padding: 10px;
+    z-index: 900;
+    left: 0;
+    top: 50px;
 }

@@ -501,7 +501,7 @@ table {
 
 .search-box {
   width: 500px;
-  margin: 50px auto 50px;
+  margin: 50px auto 10px;
 }
 .search-box input {
   width: 392px;
@@ -579,7 +579,7 @@ table {
 .result-box .rwd-table {
   background: #C7860F;
   color: #e5c28b;
-  overflow: hidden;
+  overflow: visible;
 }
 .result-box .rwd-table tr {
   border: none;
@@ -591,6 +591,12 @@ table {
   .result-box .rwd-table th, .result-box .rwd-table td {
     padding: 1em !important;
   }
+}
+.result-box .rwd-table th.is-success, .result-box .rwd-table td.is-success {
+  color: #24ff00;
+}
+.result-box .rwd-table th.is-error, .result-box .rwd-table td.is-error {
+  color: #ff2825;
 }
 .result-box .rwd-table th, .result-box .rwd-table td:before {
   color: #e5d0a7;
@@ -605,6 +611,34 @@ table {
   color: #eed8b5;
 }
 
+.result-box-url {
+  position: relative;
+}
+
+.result-box-url-overlay {
+  position: absolute;
+  background-color: #C99B33;
+  height: 20px;
+  white-space: nowrap;
+  color: #e5d0a7;
+  padding: 10px;
+  z-index: 900;
+  left: 0;
+  top: 50px;
+}
+
+.error-container {
+  width: 100%;
+  text-align: center;
+  height: 20px;
+  color: #ff2825;
+  padding: 10px;
+}
+
 body {
   background: #333;
+}
+
+.hidden {
+  display: none;
 }
